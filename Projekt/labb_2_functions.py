@@ -3,6 +3,7 @@ from statistics import mean, median
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
+import numpy as np
 
 def character_counter_for_sentences(column: Series) -> None:
     sentence_length_characters = []
@@ -49,6 +50,7 @@ def length_words_and_characters_histplot(df,
     sns.histplot(df["word_amount"], bins=bin, kde=kde, ax=axs[1])
     axs[1].set_title("Sentence length in words")
     axs[1].set_xlabel("Words")
+    axs[1].set_xticks(np.arange(1, 21))
     axs[1].set_ylabel("Amount")
 
     plt.tight_layout()
